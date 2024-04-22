@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""task 0"""
-import asyncio
+""" The basics of async  """
 import random
+import asyncio
 
 
 async def wait_random(max_delay: int = 10) -> float:
-    """waits for a random delay"""
-    wait_time = random.random() * max_delay
-    await asyncio.sleep(wait_time)
-    return wait_time
+    """ asynchronous coroutine that takes in an integer argument
+        (max_delay, with a default value of 10) named wait_random that waits
+        for a random delay between 0 and max_delay (included and float value)
+        seconds and eventually returns it.  """
+    random_float = random.uniform(0, max_delay)
+    await asyncio.sleep(random_float)
+    return random_float
